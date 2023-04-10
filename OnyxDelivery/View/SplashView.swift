@@ -8,14 +8,31 @@
 import SwiftUI
 
 struct SplashView: View {
+    @State var done: Bool = false
     var body: some View {
         ZStack {
-            Image("courier")
-                .resizable()
-                .scaledToFit()
-                .frame(maxHeight: .infinity, alignment: .bottom)
-            Image("logo")
-        }.background(Color("#E9FAFF"))
+            if done {
+                LoginView()
+                    .transition(.scale.combined(with: .opacity))
+            } else {
+                ZStack {
+                    Image("courier")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                    Image("logo")
+                }
+                .background(Color("#E9FAFF"))
+                .zIndex(1)
+                .transition(.scale(scale: 2).combined(with: .opacity))
+            }
+        }.onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                withAnimation {
+                    self.done = true
+                }
+            }
+        }
     }
 }
 

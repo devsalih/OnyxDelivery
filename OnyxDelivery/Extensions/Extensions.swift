@@ -33,3 +33,47 @@ extension Color {
         )
     }
 }
+
+struct RoundedTextField: TextFieldStyle {
+    let backgroundColor: Color
+    let foregroundColor: Color
+    
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .textInputAutocapitalization(.never)
+            .autocorrectionDisabled()
+            .padding()
+            .padding(.horizontal)
+            .foregroundColor(foregroundColor)
+            .background { Capsule().fill(backgroundColor) }
+            .padding(.horizontal)
+    }
+}
+
+extension View {
+    func rounded(backgroundColor: Color = Color("F1F5FB"), foregroundColor: Color = Color("004F62")) -> some View {
+        textFieldStyle(RoundedTextField(backgroundColor: backgroundColor, foregroundColor: foregroundColor))
+    }
+}
+
+struct RoundedButtonStyle: ButtonStyle {
+    let backgroundColor: Color
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .frame(maxWidth: .infinity)
+            .foregroundColor(.white)
+            .background {
+                Capsule().fill(backgroundColor)
+            }
+            .padding(.horizontal)
+            .opacity(configuration.isPressed ? 0.7 : 1)
+    }
+}
+
+extension Button {
+    func rounded(backgroundColor: Color = Color("004F62")) -> some View {
+        buttonStyle(RoundedButtonStyle(backgroundColor: backgroundColor))
+    }
+}
