@@ -37,21 +37,26 @@ struct LoginView: View {
             
             VStack {
                 Text("Welcome Back!")
+                    .font(.montserrat(.semiBold, size: 29))
                     .foregroundColor(Color("004F62"))
                 
                 Text("Log back into your account")
+                    .font(.montserrat(.medium, size: 12))
                     .foregroundColor(Color("004F62"))
                     .padding(.bottom, 44)
                 
                 TextField("User ID", text: $userID)
+                    .font(.montserrat(.regular, size: 14))
                     .rounded()
                 
                 SecureField("Password", text: $password)
+                    .font(.montserrat(.regular, size: 14))
                     .rounded()
                     .padding(.bottom, 44)
                 
                 Button("Login", action: login)
                     .rounded()
+                    .font(.montserrat(.medium, size: 14))
             }
         }
     }
