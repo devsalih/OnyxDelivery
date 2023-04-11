@@ -12,11 +12,27 @@ struct HomeView: View {
     @State private var page: Int = 0
     
     var body: some View {
-        VStack(spacing: 0) {
-            appBar
-            VStack {
-                segmentedControl
-                ScrollView { }
+        NavigationView {
+            VStack(spacing: 0) {
+                appBar
+                VStack {
+                    segmentedControl
+                    ScrollView {
+                        if let filteredOrders = viewModel.orders.filter({ order in
+                            ["0", "123"][page].contains(order.statusFlag)
+                        }), !filteredOrders.isEmpty {
+                            ForEach(filteredOrders, id: \.serial) { order in
+                                NavigationLink {
+                                    OrderDetailView(viewModel: viewModel, order: order)
+                                } label: {
+                                    OrderRow(order: order)
+                                }
+                            }
+                        } else {
+                            Text("No orders found.")
+                        }
+                    }
+                }
             }
         }
         .fullScreenCover(isPresented: viewModel.showLogin) {
@@ -56,7 +72,7 @@ struct HomeView: View {
                     .font(.montserrat(.semiBold, size: 14))
                     .foregroundColor(page == i ? .white : Color("#004F62"))
                     .frame(width: 110, height: 36)
-                    .onTapGesture { withAnimation { page = i } }
+                    .onTapGesture { page = i }
             }
         }
         .background {
@@ -72,6 +88,7 @@ struct HomeView: View {
             }
         }
         .padding()
+        .animation(.spring(), value: page)
     }
 }
 

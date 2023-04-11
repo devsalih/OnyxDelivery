@@ -17,6 +17,7 @@ struct UserModel: Codable {
 
 struct User: Codable {
     let deliveryName: String?
+    var id: String?
 
     enum CodingKeys: String, CodingKey {
         case deliveryName = "DeliveryName"

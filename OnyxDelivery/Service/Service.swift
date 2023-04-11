@@ -15,8 +15,6 @@ class Service {
         case changeDeliveryPassword = "ChangeDeliveryPassword"
         case checkDeliveryLogin = "CheckDeliveryLogin"
         case getDeliveryBillsItems = "GetDeliveryBillsItems"
-        case getDeliveryStatusTypes = "GetDeliveryStatusTypes"
-        case getReturnBillReasons = "GetReturnBillReasons"
         case updateDeliveryBillStatus = "UpdateDeliveryBillStatus"
     }
     
@@ -57,43 +55,22 @@ class Service {
         }
     }
     
-    func getDeliveryBillsItems(userID: String) {
-        let parameters = ["P_DLVRY_NO": userID, "P_LANG_NO": langNo, "P_BILL_SRL": "", "P_PRCSSD_FLG": "1"]
+    func getDeliveryBillsItems(userID: String, billSerial: String = "", showOnlyNew: Bool = false, onCompleted: @escaping ([Order]) -> Void) {
+        let parameters = ["P_DLVRY_NO": userID, "P_LANG_NO": langNo, "P_BILL_SRL": billSerial, "P_PRCSSD_FLG": showOnlyNew ? "0" : ""]
         
         makeRequest(path: .getDeliveryBillsItems, parameters: parameters) { (result: Result<OrderModel, Error>) in
             switch result {
-            case .success(let response): print(response)
+            case .success(let response): onCompleted(response.data.orders)
             case .failure(let error): print(error)
             }
         }
     }
     
-    func getDeliveryStatusTypes() {
-        let parameters = ["P_LANG_NO": langNo]
-        
-        makeRequest(path: .getDeliveryStatusTypes, parameters: parameters) { (result: Result<DeliveryStatusModel, Error>) in
-            switch result {
-            case .success(let response): print(response)
-            case .failure(let error): print(error)
-            }
-        }
-    }
-    
-    func getReturnBillReasons() {
-        let parameters = ["P_LANG_NO": langNo]
-        
-        makeRequest(path: .getReturnBillReasons, parameters: parameters) { (result: Result<ReturnBillReasonModel, Error>) in
-            switch result {
-            case .success(let response): print(response)
-            case .failure(let error): print(error)
-            }
-        }
-    }
-    
-    func updateDeliveryBillStatus(serial: String, statusFlag: String) {
+    func updateDeliveryBillStatus(serial: String, statusFlag: String, onCompleted: @escaping () -> Void) {
         let parameters = ["P_LANG_NO" : langNo, "P_BILL_SRL" : serial, "P_DLVRY_STATUS_FLG" : statusFlag, "P_DLVRY_RTRN_RSN" : ""]
         
         makeRequest(path: .updateDeliveryBillStatus, parameters: parameters) { (result: Result<ResultModel, Error>) in
+            onCompleted()
             switch result {
             case .success(let response): print(response)
             case .failure(let error): print(error)
