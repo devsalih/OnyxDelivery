@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    let viewModel: ViewModel
     @State private var userID: String = ""
     @State private var password: String = ""
     @State private var error: String = ""
@@ -69,11 +70,15 @@ struct LoginView: View {
         }
     }
     
-    func login() { print("username: \(userID), password: \(password)") }
+    func login() {
+        viewModel.login(userID: userID, password: password) { error in
+            self.error = error
+        }
+    }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: ViewModel())
     }
 }

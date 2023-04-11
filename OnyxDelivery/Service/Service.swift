@@ -41,14 +41,14 @@ class Service {
         }
     }
     
-    func login(userID: String, password: String, error: @escaping (String) -> Void) {
+    func login(userID: String, password: String, error: @escaping (String) -> Void, user: @escaping (User) -> Void) {
         let parameters = ["P_LANG_NO": langNo, "P_DLVRY_NO": userID, "P_PSSWRD": password]
         
         makeRequest(path: .checkDeliveryLogin, parameters: parameters) { (result: Result<UserModel, Error>) in
             switch result {
             case .success(let response):
-                if let deliveryName = response.user.deliveryName {
-                    print("Welcome: \(deliveryName)")
+                if response.result.errorNo == 0 {
+                    user(response.user)
                 } else {
                     error(response.result.errorMessage)
                 }
