@@ -25,6 +25,13 @@
 		F24E2BFE29E46DBA000C19C8 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F24E2BEC29E46DB9000C19C8 /* Montserrat-ThinItalic.ttf */; };
 		F24E2BFF29E46DBA000C19C8 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F24E2BED29E46DB9000C19C8 /* Montserrat-SemiBold.ttf */; };
 		F24E2C0029E46DBA000C19C8 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F24E2BEE29E46DBA000C19C8 /* Montserrat-ExtraLightItalic.ttf */; };
+		F24E2C0329E47921000C19C8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F24E2C0229E47921000C19C8 /* Alamofire */; };
+		F24E2C0629E48BDA000C19C8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E2C0529E48BDA000C19C8 /* Service.swift */; };
+		F24E2C0929E48F9D000C19C8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E2C0829E48F9D000C19C8 /* ViewModel.swift */; };
+		F24E2C0C29E4AB77000C19C8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E2C0B29E4AB77000C19C8 /* UserModel.swift */; };
+		F24E2C0E29E4ABED000C19C8 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E2C0D29E4ABED000C19C8 /* OrderModel.swift */; };
+		F24E2C1029E4AC78000C19C8 /* DeliveryStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E2C0F29E4AC78000C19C8 /* DeliveryStatusType.swift */; };
+		F24E2C1229E4AE9D000C19C8 /* ReturnBillReasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E2C1129E4AE9D000C19C8 /* ReturnBillReasonModel.swift */; };
 		F2DF10EB29E456C400D97B6D /* OnyxDeliveryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF10EA29E456C400D97B6D /* OnyxDeliveryApp.swift */; };
 		F2DF10EF29E456C400D97B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DF10EE29E456C400D97B6D /* Assets.xcassets */; };
 		F2DF10F229E456C400D97B6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DF10F129E456C400D97B6D /* Preview Assets.xcassets */; };
@@ -52,6 +59,12 @@
 		F24E2BEC29E46DB9000C19C8 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		F24E2BED29E46DB9000C19C8 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		F24E2BEE29E46DBA000C19C8 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		F24E2C0529E48BDA000C19C8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		F24E2C0829E48F9D000C19C8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F24E2C0B29E4AB77000C19C8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F24E2C0D29E4ABED000C19C8 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		F24E2C0F29E4AC78000C19C8 /* DeliveryStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryStatusType.swift; sourceTree = "<group>"; };
+		F24E2C1129E4AE9D000C19C8 /* ReturnBillReasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnBillReasonModel.swift; sourceTree = "<group>"; };
 		F2DF10E729E456C400D97B6D /* OnyxDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnyxDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DF10EA29E456C400D97B6D /* OnyxDeliveryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnyxDeliveryApp.swift; sourceTree = "<group>"; };
 		F2DF10EE29E456C400D97B6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24E2C0329E47921000C19C8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +112,33 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		F24E2C0429E48BC0000C19C8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F24E2C0529E48BDA000C19C8 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F24E2C0729E48F80000C19C8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F24E2C0829E48F9D000C19C8 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F24E2C0A29E4AB4F000C19C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F24E2C0B29E4AB77000C19C8 /* UserModel.swift */,
+				F24E2C0D29E4ABED000C19C8 /* OrderModel.swift */,
+				F24E2C0F29E4AC78000C19C8 /* DeliveryStatusType.swift */,
+				F24E2C1129E4AE9D000C19C8 /* ReturnBillReasonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F2DF10DE29E456C400D97B6D = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +161,10 @@
 				F2DF10F829E456DB00D97B6D /* Info.plist */,
 				F2DF10EA29E456C400D97B6D /* OnyxDeliveryApp.swift */,
 				F24E2BDC29E46DAA000C19C8 /* Font */,
+				F24E2C0429E48BC0000C19C8 /* Service */,
+				F24E2C0A29E4AB4F000C19C8 /* Model */,
 				F2DF10FC29E4580F00D97B6D /* View */,
+				F24E2C0729E48F80000C19C8 /* ViewModel */,
 				F2DF10FD29E459AF00D97B6D /* Extensions */,
 				F2DF10EE29E456C400D97B6D /* Assets.xcassets */,
 				F2DF10F029E456C400D97B6D /* Preview Content */,
@@ -169,6 +213,9 @@
 			dependencies = (
 			);
 			name = OnyxDelivery;
+			packageProductDependencies = (
+				F24E2C0229E47921000C19C8 /* Alamofire */,
+			);
 			productName = OnyxDelivery;
 			productReference = F2DF10E729E456C400D97B6D /* OnyxDelivery.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +244,9 @@
 				Base,
 			);
 			mainGroup = F2DF10DE29E456C400D97B6D;
+			packageReferences = (
+				F24E2C0129E47921000C19C8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = F2DF10E829E456C400D97B6D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,9 +291,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24E2C0E29E4ABED000C19C8 /* OrderModel.swift in Sources */,
 				F2DF10EB29E456C400D97B6D /* OnyxDeliveryApp.swift in Sources */,
+				F24E2C1229E4AE9D000C19C8 /* ReturnBillReasonModel.swift in Sources */,
+				F24E2C0C29E4AB77000C19C8 /* UserModel.swift in Sources */,
 				F2DF10FF29E459C400D97B6D /* Extensions.swift in Sources */,
+				F24E2C0629E48BDA000C19C8 /* Service.swift in Sources */,
 				F2DF110129E45AA800D97B6D /* LoginView.swift in Sources */,
+				F24E2C0929E48F9D000C19C8 /* ViewModel.swift in Sources */,
+				F24E2C1029E4AC78000C19C8 /* DeliveryStatusType.swift in Sources */,
 				F2DF10FB29E4580A00D97B6D /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +505,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F24E2C0129E47921000C19C8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F24E2C0229E47921000C19C8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F24E2C0129E47921000C19C8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2DF10DF29E456C400D97B6D /* Project object */;
 }

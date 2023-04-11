@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var userID: String = ""
     @State private var password: String = ""
+    @State private var error: String = ""
     
     var body: some View {
         ZStack {
@@ -53,6 +54,13 @@ struct LoginView: View {
                     .font(.montserrat(.regular, size: 14))
                     .rounded()
                     .padding(.bottom, 44)
+                
+                if !error.isEmpty {
+                    Text(error)
+                        .padding()
+                        .foregroundColor(.red)
+                        .padding(.top, -44)
+                }
                 
                 Button("Login", action: login)
                     .rounded()
