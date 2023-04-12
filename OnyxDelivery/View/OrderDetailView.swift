@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrderDetailView: View {
     @Environment(\.dismiss) var dismiss
-    let viewModel: ViewModel
+    @EnvironmentObject var viewModel: ViewModel
     let order: Order
     
     var body: some View {
@@ -18,22 +18,22 @@ struct OrderDetailView: View {
             status
             contact
             address
+            billDetail
             
             Spacer()
             
             if order.statusFlag == "0" {
-                Button("Deliver", action: deliver).rounded()
+                Button("Deliver") {
+                    dismiss()
+                    viewModel.deliver(order: order)
+                }.rounded()
             }
             
             amount
         }
         .font(.montserrat(.regular, 16))
         .navigationTitle("Order Detail")
-    }
-    
-    func deliver() {
-        dismiss()
-        viewModel.deliver(order: order)
+        .onAppear { viewModel.fetchOrderDetails(order: order) }
     }
     
     var detail: some View {
@@ -93,6 +93,42 @@ struct OrderDetailView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal)
         .padding(.top, 8)
+    }
+    
+    var billDetail: some View {
+        VStack {
+            HStack {
+                Text("Bill Detail").bold()
+                Spacer()
+                Text("\(viewModel.orderDetails.count) items")
+            }.padding()
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(viewModel.orderDetails, id: \.itemCode) { detail in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Item Code")
+                                Text("Item Name")
+                                Text("Item Price")
+                                Text("VAT Percentage")
+                                Text("VAT Amount")
+                            }
+                            VStack(alignment: .leading) {
+                                Text(": \(detail.itemCode)")
+                                Text(": \(detail.itemName)")
+                                Text(": \(detail.itemPrice)")
+                                Text(": \(detail.vatPercentage)")
+                                Text(": \(detail.vatAmount)")
+                            }
+                        }
+                        .padding()
+                        .background(.regularMaterial)
+                        .padding(.leading)
+                    }
+                }.padding(.trailing)
+            }
+        }
     }
     
     var amount: some View {

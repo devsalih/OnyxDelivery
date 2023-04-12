@@ -12,6 +12,7 @@ class ViewModel: ObservableObject {
     
     @Published var user: User?
     @Published var orders: [Order] = []
+    @Published var orderDetails: [OrderDetail] = []
     
     var showHome: Binding<Bool> { Binding(get: { self.user != nil }, set: { _ in }) }
     
@@ -38,4 +39,11 @@ class ViewModel: ObservableObject {
     }
     
     func logout() { user = nil }
+    
+    func fetchOrderDetails(order: Order) {
+        if user == nil { return }
+        service.getDeliveryBillsItems(userID: user?.id ?? "", billSerial: order.serial) { orderDetails in
+            self.orderDetails = orderDetails
+        }
+    }
 }

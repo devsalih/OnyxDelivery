@@ -55,10 +55,23 @@ class Service {
         }
     }
     
-    func getDeliveryBillsItems(userID: String, billSerial: String = "", showOnlyNew: Bool = false, onCompleted: @escaping ([Order]) -> Void) {
-        let parameters = ["P_DLVRY_NO": userID, "P_LANG_NO": langNo, "P_BILL_SRL": billSerial, "P_PRCSSD_FLG": showOnlyNew ? "0" : ""]
+    func getDeliveryBillsItems(userID: String, showOnlyNew: Bool = false, onCompleted: @escaping ([Order]) -> Void) {
+        let parameters = ["P_DLVRY_NO": userID, "P_LANG_NO": langNo, "P_BILL_SRL": "", "P_PRCSSD_FLG": showOnlyNew ? "0" : ""]
         
         makeRequest(path: .getDeliveryBillsItems, parameters: parameters) { (result: Result<OrderModel, Error>) in
+            switch result {
+            case .success(let response): onCompleted(response.data.orders)
+            case .failure(let error): print(error)
+            }
+        }
+    }
+    
+    func getDeliveryBillsItems(userID: String, billSerial: String, onCompleted: @escaping ([OrderDetail]) -> Void) {
+        let parameters = ["P_DLVRY_NO": userID, "P_LANG_NO": langNo, "P_BILL_SRL": billSerial, "P_PRCSSD_FLG": ""]
+        
+        
+        makeRequest(path: .getDeliveryBillsItems, parameters: parameters) { (result: Result<OrderDetailModel, Error>) in
+            
             switch result {
             case .success(let response): onCompleted(response.data.orders)
             case .failure(let error): print(error)

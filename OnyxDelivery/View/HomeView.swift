@@ -82,7 +82,8 @@ struct HomeView: View {
             }), !filteredOrders.isEmpty {
                 ForEach(filteredOrders, id: \.serial) { order in
                     NavigationLink {
-                        OrderDetailView(viewModel: viewModel, order: order)
+                        OrderDetailView(order: order)
+                            .environmentObject(viewModel)
                     } label: {
                         OrderRow(order: order)
                     }
