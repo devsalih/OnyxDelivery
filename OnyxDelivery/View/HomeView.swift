@@ -13,13 +13,15 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                appBar
-                segmentedControl
-                orderList
-                Button("Logout", action: viewModel.logout)
-                    .rounded(backgroundColor: Color("D42A0F"))
-            }
+            AutoLogoutView {
+                VStack(spacing: 20) {
+                    appBar
+                    segmentedControl
+                    orderList
+                    Button("Logout", action: viewModel.logout)
+                        .rounded(backgroundColor: Color("D42A0F"))
+                }
+            }.environmentObject(viewModel)
         }
     }
     
