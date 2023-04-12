@@ -31,6 +31,11 @@
 		F24E2C0C29E4AB77000C19C8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E2C0B29E4AB77000C19C8 /* UserModel.swift */; };
 		F24E2C0E29E4ABED000C19C8 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E2C0D29E4ABED000C19C8 /* OrderModel.swift */; };
 		F2729AAE29E67EDD005B76BD /* AutoLogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729AAD29E67EDD005B76BD /* AutoLogoutView.swift */; };
+		F2729AB029E6843C005B76BD /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729AAF29E6843C005B76BD /* Color+Hex.swift */; };
+		F2729AB229E684C1005B76BD /* View+RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729AB129E684C1005B76BD /* View+RoundedTextField.swift */; };
+		F2729AB429E68550005B76BD /* Button+RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729AB329E68550005B76BD /* Button+RoundedButton.swift */; };
+		F2729AB629E6859A005B76BD /* Font+Montserrat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729AB529E6859A005B76BD /* Font+Montserrat.swift */; };
+		F2729AB829E685F1005B76BD /* View+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729AB729E685F0005B76BD /* View+CornerRadius.swift */; };
 		F2877EAA29E542D2002113A0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2877EA929E542D2002113A0 /* HomeView.swift */; };
 		F2B6F7B829E5782400DEDCDA /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6F7B729E5782400DEDCDA /* OrderRow.swift */; };
 		F2B6F7BA29E58AB400DEDCDA /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6F7B929E58AB400DEDCDA /* OrderDetailView.swift */; };
@@ -38,7 +43,7 @@
 		F2DF10EF29E456C400D97B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DF10EE29E456C400D97B6D /* Assets.xcassets */; };
 		F2DF10F229E456C400D97B6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DF10F129E456C400D97B6D /* Preview Assets.xcassets */; };
 		F2DF10FB29E4580A00D97B6D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF10FA29E4580A00D97B6D /* SplashView.swift */; };
-		F2DF10FF29E459C400D97B6D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF10FE29E459C400D97B6D /* Extensions.swift */; };
+		F2DF10FF29E459C400D97B6D /* String+WordManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF10FE29E459C400D97B6D /* String+WordManipulation.swift */; };
 		F2DF110129E45AA800D97B6D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF110029E45AA800D97B6D /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +71,11 @@
 		F24E2C0B29E4AB77000C19C8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F24E2C0D29E4ABED000C19C8 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		F2729AAD29E67EDD005B76BD /* AutoLogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLogoutView.swift; sourceTree = "<group>"; };
+		F2729AAF29E6843C005B76BD /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		F2729AB129E684C1005B76BD /* View+RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundedTextField.swift"; sourceTree = "<group>"; };
+		F2729AB329E68550005B76BD /* Button+RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+RoundedButton.swift"; sourceTree = "<group>"; };
+		F2729AB529E6859A005B76BD /* Font+Montserrat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Montserrat.swift"; sourceTree = "<group>"; };
+		F2729AB729E685F0005B76BD /* View+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CornerRadius.swift"; sourceTree = "<group>"; };
 		F2877EA929E542D2002113A0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F2B6F7B729E5782400DEDCDA /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
 		F2B6F7B929E58AB400DEDCDA /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
@@ -75,7 +85,7 @@
 		F2DF10F129E456C400D97B6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2DF10F829E456DB00D97B6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F2DF10FA29E4580A00D97B6D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		F2DF10FE29E459C400D97B6D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F2DF10FE29E459C400D97B6D /* String+WordManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WordManipulation.swift"; sourceTree = "<group>"; };
 		F2DF110029E45AA800D97B6D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,7 +208,12 @@
 		F2DF10FD29E459AF00D97B6D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F2DF10FE29E459C400D97B6D /* Extensions.swift */,
+				F2DF10FE29E459C400D97B6D /* String+WordManipulation.swift */,
+				F2729AAF29E6843C005B76BD /* Color+Hex.swift */,
+				F2729AB129E684C1005B76BD /* View+RoundedTextField.swift */,
+				F2729AB329E68550005B76BD /* Button+RoundedButton.swift */,
+				F2729AB529E6859A005B76BD /* Font+Montserrat.swift */,
+				F2729AB729E685F0005B76BD /* View+CornerRadius.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -297,10 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2729AB029E6843C005B76BD /* Color+Hex.swift in Sources */,
+				F2729AB629E6859A005B76BD /* Font+Montserrat.swift in Sources */,
 				F24E2C0E29E4ABED000C19C8 /* OrderModel.swift in Sources */,
 				F2DF10EB29E456C400D97B6D /* OnyxDeliveryApp.swift in Sources */,
+				F2729AB829E685F1005B76BD /* View+CornerRadius.swift in Sources */,
 				F24E2C0C29E4AB77000C19C8 /* UserModel.swift in Sources */,
-				F2DF10FF29E459C400D97B6D /* Extensions.swift in Sources */,
+				F2729AB229E684C1005B76BD /* View+RoundedTextField.swift in Sources */,
+				F2729AB429E68550005B76BD /* Button+RoundedButton.swift in Sources */,
+				F2DF10FF29E459C400D97B6D /* String+WordManipulation.swift in Sources */,
 				F2877EAA29E542D2002113A0 /* HomeView.swift in Sources */,
 				F24E2C0629E48BDA000C19C8 /* Service.swift in Sources */,
 				F2DF110129E45AA800D97B6D /* LoginView.swift in Sources */,

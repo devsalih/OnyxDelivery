@@ -12,8 +12,7 @@ struct SplashView: View {
     var body: some View {
         ZStack {
             if done {
-                LoginView()
-                    .transition(.scale.combined(with: .opacity))
+                LoginView().transition(.scale.combined(with: .opacity))
             } else {
                 ZStack {
                     Image("courier")

@@ -19,8 +19,7 @@ struct LoginView: View {
             image
             loginForm
         }.fullScreenCover(isPresented: viewModel.showHome) {
-            HomeView()
-                .environmentObject(viewModel)
+            HomeView().environmentObject(viewModel)
         }
     }
     
