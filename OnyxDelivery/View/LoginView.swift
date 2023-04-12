@@ -18,7 +18,9 @@ struct LoginView: View {
             topView
             image
             loginForm
-        }.fullScreenCover(isPresented: viewModel.showHome) {
+        }
+        .onChange(of: [userID, password], perform: { _ in error = "" })
+        .fullScreenCover(isPresented: viewModel.showHome) {
             HomeView().environmentObject(viewModel)
         }
     }

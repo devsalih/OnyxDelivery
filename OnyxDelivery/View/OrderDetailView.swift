@@ -22,10 +22,10 @@ struct OrderDetailView: View {
             
             Spacer()
             
-            if order.statusFlag == "0" {
+            if order.status == "0" {
                 Button("Deliver") {
                     dismiss()
-                    viewModel.deliver(order: order)
+                    viewModel.deliver(order)
                 }.rounded()
             }
             
@@ -56,7 +56,7 @@ struct OrderDetailView: View {
     }
     
     var status: some View {
-        Text("\(order.status) Order")
+        Text("\(order.statusString) Order")
             .bold()
             .foregroundColor(.white)
             .frame(height: 50)
@@ -135,14 +135,21 @@ struct OrderDetailView: View {
         VStack(spacing: 0) {
             Divider()
             HStack {
-                (Text("Delivery\n").bold() + Text(order.deliveryAmountString) )
-                    .frame(maxWidth: .infinity)
+                (Text("Delivery\n").bold() +
+                 Text(order.deliveryAmount.doubleValueWith(decimalCount: 2)))
+                .frame(maxWidth: .infinity)
+                
                 Divider()
-                (Text("Bill Amount\n").bold() + Text(order.amountString) )
-                    .frame(maxWidth: .infinity)
+                
+                (Text("Bill Amount\n").bold() +
+                 Text(order.amount.doubleValueWith(decimalCount: 2)))
+                .frame(maxWidth: .infinity)
+                
                 Divider()
-                (Text("Tax\n").bold() + Text(order.taxAmountString) )
-                    .frame(maxWidth: .infinity)
+                
+                (Text("Tax\n").bold() +
+                 Text(order.taxAmount.doubleValueWith(decimalCount: 2)))
+                .frame(maxWidth: .infinity)
             }
             .multilineTextAlignment(.center)
             .frame(height: 60)

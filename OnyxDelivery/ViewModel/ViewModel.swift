@@ -11,7 +11,8 @@ class ViewModel: ObservableObject {
     private let service: Service = Service()
     
     @Published var user: User?
-    @Published var orders: [Order] = []
+    @Published var newOrders: [Order] = []
+    @Published var otherOrders: [Order] = []
     @Published var orderDetails: [OrderDetail] = []
     
     var showHome: Binding<Bool> { Binding(get: { self.user != nil }, set: { _ in }) }
@@ -20,30 +21,32 @@ class ViewModel: ObservableObject {
         service.login(userID: userID, password: password, error: error) { user in
             self.user = user
             self.user?.id = userID
-            self.loadOrders()
-        }
-    }
-    
-    func loadOrders() {
-        if user == nil { return }
-        service.getDeliveryBillsItems(userID: user?.id ?? "") { orders in
-            self.orders = orders
-        }
-    }
-    
-    func deliver(order: Order) {
-        if user == nil { return }
-        service.updateDeliveryBillStatus(serial: order.serial, statusFlag: "1") {
-            self.loadOrders()
+            self.fetchOrders()
         }
     }
     
     func logout() { user = nil }
     
+    func fetchOrders() {
+        if user == nil { return }
+        service.getDeliveryBillsItems(userID: user?.id ?? "") { orders in
+            DBManager().write(orders: orders)
+            self.newOrders = DBManager().getOrders(onlyNews: true)
+            self.otherOrders = DBManager().getOrders(onlyNews: false)
+        }
+    }
+    
     func fetchOrderDetails(order: Order) {
         if user == nil { return }
         service.getDeliveryBillsItems(userID: user?.id ?? "", billSerial: order.serial) { orderDetails in
             self.orderDetails = orderDetails
+        }
+    }
+    
+    func deliver(_ order: Order) {
+        if user == nil { return }
+        service.updateDeliveryBillStatus(serial: order.serial, statusFlag: "1") {
+            self.fetchOrders()
         }
     }
 }

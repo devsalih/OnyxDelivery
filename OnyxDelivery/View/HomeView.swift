@@ -77,10 +77,10 @@ struct HomeView: View {
     
     var orderList: some View {
         ScrollView {
-            if let filteredOrders = viewModel.orders.filter({ order in
-                ["0", "123"][page].contains(order.statusFlag)
-            }), !filteredOrders.isEmpty {
-                ForEach(filteredOrders, id: \.serial) { order in
+            if [viewModel.newOrders, viewModel.otherOrders][page].isEmpty {
+                Text("No orders found.").frame(maxWidth: .infinity)
+            } else {
+                ForEach([viewModel.newOrders, viewModel.otherOrders][page], id: \.serial) { order in
                     NavigationLink {
                         OrderDetailView(order: order)
                             .environmentObject(viewModel)
@@ -88,9 +88,6 @@ struct HomeView: View {
                         OrderRow(order: order)
                     }
                 }
-            } else {
-                Text("No orders found.")
-                    .frame(maxWidth: .infinity)
             }
         }
     }

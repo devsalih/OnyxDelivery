@@ -47,6 +47,9 @@
 		F2DF10FB29E4580A00D97B6D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF10FA29E4580A00D97B6D /* SplashView.swift */; };
 		F2DF10FF29E459C400D97B6D /* String+WordManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF10FE29E459C400D97B6D /* String+WordManipulation.swift */; };
 		F2DF110129E45AA800D97B6D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF110029E45AA800D97B6D /* LoginView.swift */; };
+		F2EAB11829E6D30400F8AC37 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EAB11729E6D30400F8AC37 /* DBManager.swift */; };
+		F2EAB11B29E6D32200F8AC37 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F2EAB11A29E6D32200F8AC37 /* SQLite */; };
+		F2EAB11D29E70BAC00F8AC37 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = F2EAB11C29E70BAC00F8AC37 /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +94,8 @@
 		F2DF10FA29E4580A00D97B6D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F2DF10FE29E459C400D97B6D /* String+WordManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WordManipulation.swift"; sourceTree = "<group>"; };
 		F2DF110029E45AA800D97B6D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F2EAB11729E6D30400F8AC37 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		F2EAB11C29E70BAC00F8AC37 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EAB11B29E6D32200F8AC37 /* SQLite in Frameworks */,
 				F24E2C0329E47921000C19C8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				F24E2C0529E48BDA000C19C8 /* Service.swift */,
+				F2EAB11729E6D30400F8AC37 /* DBManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 		F2DF10DE29E456C400D97B6D = {
 			isa = PBXGroup;
 			children = (
+				F2EAB11C29E70BAC00F8AC37 /* Readme.md */,
 				F2DF10E929E456C400D97B6D /* OnyxDelivery */,
 				F2DF10E829E456C400D97B6D /* Products */,
 			);
@@ -242,6 +250,7 @@
 			name = OnyxDelivery;
 			packageProductDependencies = (
 				F24E2C0229E47921000C19C8 /* Alamofire */,
+				F2EAB11A29E6D32200F8AC37 /* SQLite */,
 			);
 			productName = OnyxDelivery;
 			productReference = F2DF10E729E456C400D97B6D /* OnyxDelivery.app */;
@@ -273,6 +282,7 @@
 			mainGroup = F2DF10DE29E456C400D97B6D;
 			packageReferences = (
 				F24E2C0129E47921000C19C8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F2EAB11929E6D32200F8AC37 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = F2DF10E829E456C400D97B6D /* Products */;
 			projectDirPath = "";
@@ -302,6 +312,7 @@
 				F24E2BF929E46DBA000C19C8 /* Montserrat-ExtraBold.ttf in Resources */,
 				F24E2BF829E46DBA000C19C8 /* Montserrat-Bold.ttf in Resources */,
 				F24E2BFA29E46DBA000C19C8 /* Montserrat-Medium.ttf in Resources */,
+				F2EAB11D29E70BAC00F8AC37 /* Readme.md in Resources */,
 				F2DF10F229E456C400D97B6D /* Preview Assets.xcassets in Resources */,
 				F24E2BFE29E46DBA000C19C8 /* Montserrat-ThinItalic.ttf in Resources */,
 				F2DF10EF29E456C400D97B6D /* Assets.xcassets in Resources */,
@@ -333,6 +344,7 @@
 				F2DF110129E45AA800D97B6D /* LoginView.swift in Sources */,
 				F2B6F7B829E5782400DEDCDA /* OrderRow.swift in Sources */,
 				F2729ABC29E69AAF005B76BD /* String+NumberFormatter.swift in Sources */,
+				F2EAB11829E6D30400F8AC37 /* DBManager.swift in Sources */,
 				F2B6F7BA29E58AB400DEDCDA /* OrderDetailView.swift in Sources */,
 				F2729AAE29E67EDD005B76BD /* AutoLogoutView.swift in Sources */,
 				F24E2C0929E48F9D000C19C8 /* ViewModel.swift in Sources */,
@@ -551,6 +563,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F2EAB11929E6D32200F8AC37 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -558,6 +578,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F24E2C0129E47921000C19C8 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		F2EAB11A29E6D32200F8AC37 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2EAB11929E6D32200F8AC37 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -19,7 +19,9 @@ struct OrderRow: View {
                     .padding(.leading)
                 
                 HStack {
-                    column(label: "Status", value: order.status, color: Color(order.color))
+                    column(label: "Status",
+                           value: order.statusString.replacingOccurrences(of: " ", with: "\n"),
+                           color: Color(order.color))
                     Divider()
                     column(label: "Total price", value: order.totalPrice)
                     Divider()
