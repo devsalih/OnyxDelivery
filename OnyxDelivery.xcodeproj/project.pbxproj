@@ -37,6 +37,7 @@
 		F2729AB629E6859A005B76BD /* Font+Montserrat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729AB529E6859A005B76BD /* Font+Montserrat.swift */; };
 		F2729AB829E685F1005B76BD /* View+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729AB729E685F0005B76BD /* View+CornerRadius.swift */; };
 		F2729ABA29E689FB005B76BD /* OrderDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729AB929E689FB005B76BD /* OrderDetailModel.swift */; };
+		F2729ABC29E69AAF005B76BD /* String+NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2729ABB29E69AAF005B76BD /* String+NumberFormatter.swift */; };
 		F2877EAA29E542D2002113A0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2877EA929E542D2002113A0 /* HomeView.swift */; };
 		F2B6F7B829E5782400DEDCDA /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6F7B729E5782400DEDCDA /* OrderRow.swift */; };
 		F2B6F7BA29E58AB400DEDCDA /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6F7B929E58AB400DEDCDA /* OrderDetailView.swift */; };
@@ -78,6 +79,7 @@
 		F2729AB529E6859A005B76BD /* Font+Montserrat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Montserrat.swift"; sourceTree = "<group>"; };
 		F2729AB729E685F0005B76BD /* View+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CornerRadius.swift"; sourceTree = "<group>"; };
 		F2729AB929E689FB005B76BD /* OrderDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailModel.swift; sourceTree = "<group>"; };
+		F2729ABB29E69AAF005B76BD /* String+NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NumberFormatter.swift"; sourceTree = "<group>"; };
 		F2877EA929E542D2002113A0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F2B6F7B729E5782400DEDCDA /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
 		F2B6F7B929E58AB400DEDCDA /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				F2729AB329E68550005B76BD /* Button+RoundedButton.swift */,
 				F2729AB529E6859A005B76BD /* Font+Montserrat.swift */,
 				F2729AB729E685F0005B76BD /* View+CornerRadius.swift */,
+				F2729ABB29E69AAF005B76BD /* String+NumberFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				F24E2C0629E48BDA000C19C8 /* Service.swift in Sources */,
 				F2DF110129E45AA800D97B6D /* LoginView.swift in Sources */,
 				F2B6F7B829E5782400DEDCDA /* OrderRow.swift in Sources */,
+				F2729ABC29E69AAF005B76BD /* String+NumberFormatter.swift in Sources */,
 				F2B6F7BA29E58AB400DEDCDA /* OrderDetailView.swift in Sources */,
 				F2729AAE29E67EDD005B76BD /* AutoLogoutView.swift in Sources */,
 				F24E2C0929E48F9D000C19C8 /* ViewModel.swift in Sources */,

@@ -117,9 +117,9 @@ struct OrderDetailView: View {
                             VStack(alignment: .leading) {
                                 Text(": \(detail.itemCode)")
                                 Text(": \(detail.itemName)")
-                                Text(": \(detail.itemPrice)")
+                                Text(": \(detail.itemPrice.doubleValueWith(decimalCount: 2))")
                                 Text(": \(detail.vatPercentage)")
-                                Text(": \(detail.vatAmount)")
+                                Text(": \(detail.vatAmount.doubleValueWith(decimalCount: 2))")
                             }
                         }
                         .padding()
