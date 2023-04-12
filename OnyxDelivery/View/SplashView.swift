@@ -12,7 +12,7 @@ struct SplashView: View {
     var body: some View {
         ZStack {
             if done {
-                HomeView()
+                LoginView()
                     .transition(.scale.combined(with: .opacity))
             } else {
                 ZStack {

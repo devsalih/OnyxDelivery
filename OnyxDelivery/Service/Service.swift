@@ -8,7 +8,6 @@
 import Alamofire
 
 class Service {
-    private let baseUrl = "http://mapp.yemensoft.net/OnyxDeliveryService/Service.svc/";
     private let langNo = "2";
     
     private enum Paths: String {
@@ -16,11 +15,12 @@ class Service {
         case checkDeliveryLogin = "CheckDeliveryLogin"
         case getDeliveryBillsItems = "GetDeliveryBillsItems"
         case updateDeliveryBillStatus = "UpdateDeliveryBillStatus"
+        
+        var url: String { "http://mapp.yemensoft.net/OnyxDeliveryService/Service.svc/" + rawValue }
     }
     
     private func makeRequest<T: Decodable>(path: Paths, parameters: [String : String], completion: @escaping (Result<T, Error>) -> Void) {
-        let url = baseUrl + path.rawValue
-        AF.request(url, method: .post, parameters: ["Value" : parameters], encoder: JSONParameterEncoder.default).responseDecodable(of: T.self) { response in
+        AF.request(path.url, method: .post, parameters: ["Value" : parameters], encoder: JSONParameterEncoder.default).responseDecodable(of: T.self) { response in
             switch response.result {
             case .success(let result): completion(.success(result))
             case .failure(let error): completion(.failure(error))
@@ -70,9 +70,8 @@ class Service {
         let parameters = ["P_LANG_NO" : langNo, "P_BILL_SRL" : serial, "P_DLVRY_STATUS_FLG" : statusFlag, "P_DLVRY_RTRN_RSN" : ""]
         
         makeRequest(path: .updateDeliveryBillStatus, parameters: parameters) { (result: Result<ResultModel, Error>) in
-            onCompleted()
             switch result {
-            case .success(let response): print(response)
+            case .success(_): onCompleted()
             case .failure(let error): print(error)
             }
         }

@@ -15,7 +15,7 @@ struct OrderRow: View {
             VStack(alignment: .leading) {
                 Text("#\(order.serial)")
                     .foregroundColor(Color("808080"))
-                    .font(.montserrat(.medium, size: 12))
+                    .font(.montserrat(.medium, 12))
                     .padding(.leading)
                 
                 HStack {
@@ -31,7 +31,7 @@ struct OrderRow: View {
                 .frame(width: 44)
                 .overlay {
                     Text("Order\nDetails\n\(Image(systemName: "chevron.right"))")
-                        .font(.montserrat(.regular, size: 10))
+                        .font(.montserrat(.regular, 10))
                         .lineSpacing(5)
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
@@ -51,11 +51,11 @@ struct OrderRow: View {
         VStack {
             Text(label)
                 .foregroundColor(Color("808080"))
-                .font(.montserrat(.medium, size: 10))
+                .font(.montserrat(.medium, 10))
                 .padding(.bottom, 4)
             Text(value)
                 .foregroundColor(color)
-                .font(.montserrat(.semiBold, size: 16))
+                .font(.montserrat(.semiBold, 16))
         }
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity)

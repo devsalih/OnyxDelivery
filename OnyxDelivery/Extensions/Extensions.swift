@@ -79,7 +79,7 @@ extension Button {
 }
 
 extension Font {
-    static func montserrat(_ type: FontType = .regular, size: CGFloat = 18) -> Font {
+    static func montserrat(_ type: FontType = .regular, _ size: CGFloat = 18) -> Font {
         return Font.custom("Montserrat-\(type.rawValue)", size: size)
     }
 }
@@ -112,7 +112,6 @@ extension View {
 }
 
 struct RoundedCorner: Shape {
-
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
 

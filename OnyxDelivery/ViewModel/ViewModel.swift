@@ -13,7 +13,7 @@ class ViewModel: ObservableObject {
     @Published var user: User?
     @Published var orders: [Order] = []
     
-    var showLogin: Binding<Bool> { Binding(get: { self.user == nil }, set: { _ in }) }
+    var showHome: Binding<Bool> { Binding(get: { self.user != nil }, set: { _ in }) }
     
     func login(userID: String, password: String, error: @escaping (String) -> Void) {
         service.login(userID: userID, password: password, error: error) { user in
